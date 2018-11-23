@@ -3,10 +3,13 @@
 When drawing text with `golang.org/x/image/font` using `Drawer.DrawString` it renders incorrect, if glyph paths are intersecting.
 
 Freetype.png shows the result of `go run freetype.go`, which parses the font with `github.com/golang/freetype/truetype` and renders with `golang.org/x/image/font` `Drawer.DrawString`.
+
 It renders U+2262 (not identical to) of the font APL386.
+
 ![freetype.png](freetype.png)
 
 As a comparison, `go run raster.go` parses with `golang.org/x/font/sfnt` and renders with `golang.org/x/image/vector` using the methods of `sfnt.Example_rasterizeGlyph`
+
 ![raster.png](raster.png)
 
 ## Output of `go run raster.go`
