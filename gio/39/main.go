@@ -13,6 +13,7 @@ import (
 	"gioui.org/op/paint"
 )
 
+var images [2]*image.RGBA
 var Image *image.RGBA // This image is modified then uploaded to the window buffer at each click.
 
 func main() {
@@ -23,11 +24,13 @@ func main() {
 		for e := range w.Events() {
 			switch e := e.(type) {
 			case app.UpdateEvent:
+				fmt.Println("update")
 				ops.Reset()
 				Draw(ops, e.Size)
 				w.Update(ops)
 			case pointer.Event:
 				if e.Type == pointer.Press {
+					fmt.Println("press")
 					w.Invalidate()
 				}
 			}
@@ -39,8 +42,11 @@ func main() {
 func Draw(ops *op.Ops, size image.Point) {
 	if Image.Bounds().Max != size {
 		fmt.Println("Resize ", size)
-		Image = image.NewRGBA(image.Rectangle{Max: size}) // reallocate backing image with new size
+		images[0] = image.NewRGBA(image.Rectangle{Max: size}) // reallocate backing image with new size
+		images[1] = image.NewRGBA(image.Rectangle{Max: size})
 	}
+	images[0], images[1] = images[1], images[0]
+	Image = images[0]
 	c := drawNextFrame() // modifies Image: it changes the color of the visible rectangle on each call.
 	fmt.Println("Draw, color:", c)
 	paint.ImageOp{Image, Image.Bounds()}.Add(ops)
