@@ -1,0 +1,29 @@
+(module
+  (type (;0;) (func (param i32) (result i32)))
+  (func (;0;) (type 0) (param i32) (result i32)
+    (local i32)
+    local.get 0
+    if  ;; label = @1
+      i32.const 0
+      local.set 1
+      loop  ;; label = @2
+        local.get 1
+        i32.const 3
+        i32.gt_u
+        if  ;; label = @3
+          local.get 1
+          return
+        end
+        local.get 1
+        i32.const 1
+        i32.add
+        local.tee 1
+        local.get 0
+        i32.lt_u
+        br_if 0 (;@2;)
+      end
+    end
+    local.get 1)
+  (memory (;0;) 1)
+  (export "mem" (memory 0))
+  (export "f" (func 0)))
