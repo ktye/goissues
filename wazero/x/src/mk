@@ -1,0 +1,5 @@
+# wg compiler: github.com/ktye/wg/cmd/wg
+
+cat system.wat > k.wat  # no system interface
+wg . | sed 8d >> k.wat
+
