@@ -34,7 +34,7 @@ func do(wasm []byte, interpreted bool) {
 	m, e := r.InstantiateModuleFromBinary(ctx, wasm)
 	fatal(e)
 
-	res, e := m.ExportedFunction("f").Call(ctx)
+	res, e := m.ExportedFunction("kinit").Call(ctx)
 	fatal(e)
 	fmt.Printf("f() => %v\n", res)
 }

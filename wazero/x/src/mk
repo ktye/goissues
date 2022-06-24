@@ -1,6 +1,6 @@
 # wg compiler: github.com/ktye/wg/cmd/wg
 
 
-wg -nosys . > k.wat
+wg -nosys -nomain /c/k/i > k.wat
 /c/local/wabt/wat2wasm --enable-bulk-memory --enable-simd k.wat
 
