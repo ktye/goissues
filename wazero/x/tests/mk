@@ -1,0 +1,10 @@
+set -e
+set -x
+
+ww=/c/local/wabt/wat2wasm
+
+for f in 1; do
+	wg -nosys $f.go > $f.wat
+	$ww $f.wat
+done
+

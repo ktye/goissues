@@ -1,5 +1,6 @@
 # wg compiler: github.com/ktye/wg/cmd/wg
 
-cat system.wat > k.wat  # no system interface
-wg . | sed 8d >> k.wat
+
+wg -nosys . > k.wat
+/c/local/wabt/wat2wasm --enable-bulk-memory --enable-simd k.wat
 
