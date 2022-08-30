@@ -25,9 +25,9 @@ func do(wasm []byte, interpreted bool) {
 
 	var r wazero.Runtime
 	if interpreted {
-		r = wazero.NewRuntimeWithConfig(wazero.NewRuntimeConfigInterpreter().WithWasmCore2())
+		r = wazero.NewRuntimeWithConfig(ctx, wazero.NewRuntimeConfigInterpreter().WithWasmCore2())
 	} else {
-		r = wazero.NewRuntimeWithConfig(wazero.NewRuntimeConfig().WithWasmCore2())
+		r = wazero.NewRuntimeWithConfig(ctx, wazero.NewRuntimeConfig().WithWasmCore2())
 	}
 	defer r.Close(ctx)
 

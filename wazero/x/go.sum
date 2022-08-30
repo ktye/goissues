@@ -1,2 +1,2 @@
-github.com/tetratelabs/wazero v0.0.0-20220624054950-1489a9f19f39 h1:/fDeuRzphnKe8XTCELxO26d85xbF7Zt2enVFKnlJiZU=
-github.com/tetratelabs/wazero v0.0.0-20220624054950-1489a9f19f39/go.mod h1:Y4X/zO4sC2dJjZG9GDYNRbJGogfqFYJY/BbyKlOxXGI=
+github.com/tetratelabs/wazero v1.0.0-beta.1 h1:O5DZxiXG0WUUjuq4dwomA5gODRNnzF8LzQ+UOqGY5kY=
+github.com/tetratelabs/wazero v1.0.0-beta.1/go.mod h1:CD5smBN5rGZo7UNe8aUiWyYE3bDWED/CQSonog9NSEg=
